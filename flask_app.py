@@ -9,7 +9,10 @@ app = flask.Flask(__name__)
 cache = Cache(app, config={'CACHE_TYPE': 'simple'})
 cors = CORS(app, resources={r"/*": {"origins": "*"}})
 
-URLS = {'figshare': 'https://scilifelab.figshare.com/'}
+
+
+AVAILABLE = {'figshare': 'https://scilifelab.figshare.com/\n> Hosting of research data.',
+             'dbshare': 'https://dbshare.scilifelab.se/\n> Web service to share and query tabular data sets stored in SQLite3 databases.'}
 
 
 @app.route('/', methods=['POST'])
@@ -18,11 +21,11 @@ def handle_slack_request():
     identifiers = command_text.split()
 
     try:
-        text = URLS[identifiers[0].lower()]
+        text = AVAILABLE[identifiers[0].lower()]
     except KeyError:
-        text = '*Available:*\n'
-        for entry in URLS:
-            text += f'_{entry.capitalize()}_: {URLS[entry]}\n'
+        text = list_available()
+    except IndexError:
+        text = list_available()
 
     response = {"blocks": [{"type": "section",
 			    "text": {
@@ -34,3 +37,9 @@ def handle_slack_request():
 @app.route('/heartbeat', methods=['GET'])
 def heartbeat():
     return flask.Response(status=200)
+
+def list_available():
+    text = '*Available:*\n'
+    for entry in AVAILABLE:
+        text += f'* _{entry.capitalize()}_\n'
+    return text
