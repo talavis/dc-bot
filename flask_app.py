@@ -52,5 +52,5 @@ def heartbeat():
 def list_available():
     text = '*Available:*\n'
     for entry in AVAILABLE:
-        text += f'* _{entry.capitalize()}_\n'
+        text += f'* `{entry}`\n'
     return text
