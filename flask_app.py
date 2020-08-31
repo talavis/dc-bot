@@ -12,7 +12,7 @@ cors = CORS(app, resources={r"/*": {"origins": "*"}})
 URLS = {'figshare': 'https://scilifelab.figshare.com/'}
 
 
-@blueprint.route('/', methods=['POST'])
+@app.route('/', methods=['POST'])
 def handle_slack_request():
     command_text = flask.request.form['text']
     identifiers = command_text.split()
@@ -22,10 +22,15 @@ def handle_slack_request():
     except KeyError:
         text = '*Available:*\n'
         for entry in URLS:
-            text += f'_{entry.capitalize()_*: {URLS[entry]}\n'
+            text += f'_{entry.capitalize()}_: {URLS[entry]}\n'
 
     response = {"blocks": [{"type": "section",
 			    "text": {
 				"type": "mrkdwn",
 				"text": text}}]}
     return flask.jsonify(response)
+
+
+@app.route('/heartbeat', methods=['GET'])
+def heartbeat():
+    return flask.Response(status=200)
