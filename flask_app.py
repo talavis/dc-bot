@@ -12,7 +12,9 @@ cors = CORS(app, resources={r"/*": {"origins": "*"}})
 
 
 AVAILABLE = {'figshare': 'https://scilifelab.figshare.com/\n> Hosting of research data.',
-             'dbshare': 'https://dbshare.scilifelab.se/\n> Web service to share and query tabular data sets stored in SQLite3 databases.'}
+             'dbshare': 'https://dbshare.scilifelab.se/\n> Web service to share and query tabular data sets stored in SQLite3 databases.',
+             'datagraphics': 'https://datagraphics.dckube.scilifelab.se/\n> Serve datasets and graphics on the web using Vega-Lite graphics.',
+             'orderportal': 'https://orderportal.scilifelab.se/\n > A portal for orders (requests, project applications, etc) to a facility from its users.'}
 
 
 @app.route('/', methods=['POST'])
