@@ -14,7 +14,15 @@ cors = CORS(app, resources={r"/*": {"origins": "*"}})
 AVAILABLE = {'figshare': 'https://scilifelab.figshare.com/\n> Hosting of research data.',
              'dbshare': 'https://dbshare.scilifelab.se/\n> Web service to share and query tabular data sets stored in SQLite3 databases.',
              'datagraphics': 'https://datagraphics.dckube.scilifelab.se/\n> Serve datasets and graphics on the web using Vega-Lite graphics.',
-             'orderportal': 'https://orderportal.scilifelab.se/\n > A portal for orders (requests, project applications, etc) to a facility from its users.'}
+             'orderportal': 'https://orderportal.scilifelab.se/\n> A portal for orders (requests, project applications, etc) to a facility from its users.',
+             'nextcloud': 'https://nextcloud.dckube.scilifelab.se/\n> File sharing for any user with an @scilifelab.se acount.',
+             'swefreq': 'https://swefreq.nbis.se/\n> The Swedish Frequency resource for genomics',
+             'confluence': 'https://scilifelab.atlassian.net/\n> Wiki for managing e.g. projects',
+             'forum': 'https://forum.scilifelab.se/\n> Forum for public discussions about research project',
+             'dsw': 'https://dsw.scilifelab.se/\n> Wizard for creating data management plans',
+             'homepage': 'https://www.scilifelab.se/data/\n> The SciLifeLab Data Centre homepage',
+             'menu': ('https://menu.dckube.scilifelab.se/\n> Lunch menu aggregator for restaurants near Solna/BMC' +
+                      '\n> Also accessible via `/lunch-menu` in Slack')}
 
 
 @app.route('/', methods=['POST'])
