@@ -2,11 +2,9 @@
 Requests/functions used to interact with slack
 """
 import flask
-from flask_caching import Cache
 from flask_cors import CORS
 
 app = flask.Flask(__name__)
-cache = Cache(app, config={'CACHE_TYPE': 'simple'})
 cors = CORS(app, resources={r"/*": {"origins": "*"}})
 
 
@@ -23,7 +21,28 @@ AVAILABLE = {'figshare': 'https://scilifelab.figshare.com/\n> Hosting of researc
              'homepage': 'https://www.scilifelab.se/data/\n> The SciLifeLab Data Centre homepage',
              'menu': ('https://menu.dckube.scilifelab.se/\n> Lunch menu aggregator for restaurants near Solna/BMC' +
                       '\n> Also accessible via `/lunch-menu` in Slack'),
-             'covid19data': 'http://covid19dataportal.se/\n> Portal about accessing, generating, and publishing data about COVID-19.'}
+             'covid19data': 'http://covid19dataportal.se/\n> Portal about accessing, generating, and publishing data about COVID-19.',
+             'publications': '''*If you want to access a published article:*
+
+1. Check if you can access it when connected to the SciLifeLab network.
+2. Check if the library of your university has access:
+    - KI: https://kib.ki.se/
+    - KTH: https://www.kth.se/biblioteket
+    - UU: https://www.ub.uu.se/
+    - SU: https://www.su.se/biblioteket/
+
+If you cannot access it using the above methods, you can try ordering it via Get-It-Now for the KTH library. Note that all orders will be logged and billed to the university.
+
+To order an article:
+
+1. Make sure that you are currently on the SciLifeLab Solna network or have a KTH login.
+2. Search for your article at https://www.kth.se/biblioteket.
+    - It may take a while for recent articles to appear in the search engine.
+3. Click on the "Online" link for the article of interest.
+4. Click on "CCC Get It Now"
+5. Fill in the email address you want the article to be delivered to and read "Terms and Conditions".
+6. Click accept. The article is usually delivered to your email within two hours.
+'''}
 
 
 @app.route('/', methods=['POST'])
