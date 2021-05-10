@@ -12,7 +12,7 @@ cors = CORS(app, resources={r"/*": {"origins": "*"}})
 AVAILABLE = {'figshare': 'https://scilifelab.figshare.com/\n> Hosting of research data.',
              'dbshare': 'https://dbshare.scilifelab.se/\n> Web service to share and query tabular data sets stored in SQLite3 databases.',
              'datagraphics': 'https://datagraphics.dckube.scilifelab.se/\n> Serve datasets and graphics on the web using Vega-Lite graphics.',
-             'blobserver': 'http://blobserver.dckube.scilifelab.se/\n> Hosting of "blobs" that expect frequent updates.'
+             'blobserver': 'http://blobserver.dckube.scilifelab.se/\n> Hosting of "blobs" that expect frequent updates.',
              'orderportal': 'https://orderportal.scilifelab.se/\n> A portal for orders (requests, project applications, etc) to a facility from its users.',
              'nextcloud': 'https://nextcloud.dckube.scilifelab.se/\n> File sharing for any user with an @scilifelab.se acount.',
              'swefreq': 'https://swefreq.nbis.se/\n> The Swedish Frequency resource for genomics',
