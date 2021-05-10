@@ -12,6 +12,7 @@ cors = CORS(app, resources={r"/*": {"origins": "*"}})
 AVAILABLE = {'figshare': 'https://scilifelab.figshare.com/\n> Hosting of research data.',
              'dbshare': 'https://dbshare.scilifelab.se/\n> Web service to share and query tabular data sets stored in SQLite3 databases.',
              'datagraphics': 'https://datagraphics.dckube.scilifelab.se/\n> Serve datasets and graphics on the web using Vega-Lite graphics.',
+             'blobserver': 'http://blobserver.dckube.scilifelab.se/\n> Hosting of "blobs" that expect frequent updates.'
              'orderportal': 'https://orderportal.scilifelab.se/\n> A portal for orders (requests, project applications, etc) to a facility from its users.',
              'nextcloud': 'https://nextcloud.dckube.scilifelab.se/\n> File sharing for any user with an @scilifelab.se acount.',
              'swefreq': 'https://swefreq.nbis.se/\n> The Swedish Frequency resource for genomics',
@@ -19,10 +20,11 @@ AVAILABLE = {'figshare': 'https://scilifelab.figshare.com/\n> Hosting of researc
              'forum': 'https://forum.scilifelab.se/\n> Forum for public discussions about research project',
              'dsw': 'https://dsw.scilifelab.se/\n> Wizard for creating data management plans',
              'homepage': 'https://www.scilifelab.se/data/\n> The SciLifeLab Data Centre homepage',
-             'menu': ('https://menu.dckube.scilifelab.se/\n> Lunch menu aggregator for restaurants near Solna/BMC' +
+             'data-competition': 'https://covid19dataportal.se/data_code_reuse\n> Data sharing competition.',
+             'menu': ('https://menu.dckube.scilifelab.se/\n> Lunch menu aggregator for restaurants near Solna/BMC'
                       '\n> Also accessible via `/lunch-menu` in Slack'),
-             'covid19data': 'http://covid19dataportal.se/\n> Portal about accessing, generating, and publishing data about COVID-19.',
-             'publications': '''*If you want to access a published article:*
+             'covid19data': 'http://covid19dataportal.se/\n> Portal about accessing, generating, and publishing data about COVID-19.',             
+             'publication-access': '''*If you want to access a published article:*
 
 1. Check if you can access it when connected to the SciLifeLab network.
 2. Check if the library of your university has access:
