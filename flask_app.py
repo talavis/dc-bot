@@ -20,7 +20,7 @@ AVAILABLE = {'figshare': 'https://scilifelab.figshare.com/\n> Hosting of researc
              'forum': 'https://forum.scilifelab.se/\n> Forum for public discussions about research project',
              'dsw': 'https://dsw.scilifelab.se/\n> Wizard for creating data management plans',
              'homepage': 'https://www.scilifelab.se/data/\n> The SciLifeLab Data Centre homepage',
-             'data-competition': 'https://covid19dataportal.se/data_code_reuse\n> Data sharing competition.',
+             'data-reuse-competition': 'https://covid19dataportal.se/data_code_reuse\n> Data sharing competition.',
              'menu': ('https://menu.dckube.scilifelab.se/\n> Lunch menu aggregator for restaurants near Solna/BMC'
                       '\n> Also accessible via `/lunch-menu` in Slack'),
              'covid19data': 'http://covid19dataportal.se/\n> Portal about accessing, generating, and publishing data about COVID-19.',             
